@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación - Revelación de Género</title>
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome (Para los íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+  <div class="invitation-card">
+    
+    <!-- Encabezado superior -->
+    <div class="top-text">
+      <span>ESTAMOS</span>
+      <span class="script">en la dulce</span>
+      <span>ESPERA</span>
+    </div>
+
+    <!-- Ilustración central (Ositos / Globos) -->
+    <!-- <div class="center-illustration">
+      <i class="fa-solid fa-baby boy-icon"></i>
+      <i class="fa-solid fa-question" style="color: var(--gold); font-size: 2rem;"></i>
+      <i class="fa-solid fa-baby girl-icon"></i>
+    </div> -->
+
+    <!-- Título Principal -->
+    <div class="main-title">BOY OR GIRL?</div>
+
+    <!-- Anfitriones -->
+    <div class="hosts">ARIEL & ZAHARA</div>
+    <div class="subtitle">Te invitan a descubrir si será niño o niña:</div>
+
+    <div class="question-title">¿Qué crees que sea?</div>
+
+    <!-- Cuadrícula de Fecha, Lugar y Hora -->
+    <div class="details-grid">
+      <div>
+        <div class="date-day">DOMINGO</div>
+        <div class="date-number">2</div>
+        <div class="date-month">AGOSTO</div>
+      </div>
+
+      <div class="location-text">
+        <strong>Lugar de evento</strong><br>
+        OTB. Nueva Canaan<br>
+        Cochabamba
+      </div>
+
+      <div>
+        <div class="time-label">A LAS</div>
+        <div class="time-box">13:00</div>
+        <div class="time-label">HRS</div>
+      </div>
+    </div>
+
+    <!-- Botones de Acción Interactivos -->
+    <div class="buttons-container">
+      <!-- Enlace a WhatsApp (Cambia el número de teléfono) -->
+      <a href="https://wa.me/59169522568?text=Hola,%20confirmo%20mi%20asistencia%20para%20la%20revelacion%20de%20genero" class="btn btn-confirm" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> CONFIRMAR ASISTENCIA
+      </a>
+
+      <!-- Enlace a Google Maps -->
+      <a href="https://maps.app.goo.gl/QLsbZtUhhYmLgH1H9" class="btn btn-location" target="_blank">
+        <i class="fa-solid fa-location-dot"></i> UBICACIÓN RECEPCIÓN
+      </a>
+    </div>
+
+    <!-- Elemento de Audio (Reemplaza el src con la URL o archivo de tu canción) -->
+    <audio id="bg-music" loop preload="auto">
+    <source src="bbaudio2.mpeg" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+    </audio>
+
+    <!-- Botón Flotante para Reproducir/Pausar Música -->
+    <button id="music-btn" title="Reproducir / Pausar Música">
+    <i id="music-icon" class="fa-solid fa-music"></i>
+    </button>
+
+    <div class="footer-text">¡Te esperamos!</div>
+
+  </div>
+
+  <script>
+    const musicBtn = document.getElementById('music-btn');
+    const musicIcon = document.getElementById('music-icon');
+    const bgMusic = document.getElementById('bg-music');
+
+    musicBtn.addEventListener('click', () => {
+        // Verificar si la música está pausada
+        if (bgMusic.paused) {
+        bgMusic.play();
+        // Cambia el ícono a Pausa y activa la animación
+        musicIcon.classList.remove('fa-music');
+        musicIcon.classList.add('fa-pause', 'rotate-music');
+        } else {
+        bgMusic.pause();
+        // Cambia el ícono a Música y detiene la animación
+        musicIcon.classList.remove('fa-pause', 'rotate-music');
+        musicIcon.classList.add('fa-music');
+        }
+    });
+    </script>
+
+</body>
+</html>
